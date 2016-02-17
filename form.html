@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Nueva serie</title>
+</head>
+<body>
+	<h1>Nueva serie</h1>
+	<form novalidate> <!-- HTML5 siempre hay que poner esto, por defecto lo valida el navegador y debemos poner esto a mano-->
+		<div>
+			<input type="text" id = "tittle" name ="tittle"
+			placeholder ="Título de la serie" required>
+		</div>
+
+		<div>
+			<input type="url" id="cover_url" name="cover_url" 
+			placeholder="URL de la imagen de portada" 
+			pattern="^http?://[a-z0-9]+\.[a-z0-9]+/.+" required>	
+		</div>
+
+		<div>
+			<button type="submit">Crear serie</button>
+		</div>
+
+		<div>
+			<textarea name="plot" id="plot" 
+			placeholder="Argumento de la serie"></textarea>
+		</div>
+
+		<div>
+			<label for="date">Fecha primera emisión</label>
+			<input type="date" id="date" name="date" required>
+		</div>
+
+		<div>
+			<h4>Categorías</h4>
+			<ul>
+				<li>
+					<label>
+						<input type="checkbox" name="category" value="Drama">
+						Drama
+					</label>
+				</li>
+				<li>
+					<label>
+						<input type="checkbox" name="category" value="Action">
+						Acción
+					</label>
+				</li>
+				<li>
+					<label>
+						<input type="checkbox" name="category" value="Humor">
+						Humor
+					</label>
+				</li>
+				<li>
+					<label>
+						<input type="checkbox" name="category" value="Sci-Fi">
+						Ciencia Ficción
+					</label>
+				</li>
+				<li>
+					<label>
+						<input type="checkbox" name="category" value="Sports">
+						Deportes
+					</label>
+				</li>
+			</ul>					
+		</div>
+	
+		<div>
+			<h4>Clasificación por edad</h4>
+			<ul>
+				<li>
+					<label>
+						<input type="radio" name="age_cal" value="all" required>
+						Todos los públicos
+					</label>
+				</li>
+				<li>
+					<label>
+						<input type="radio" name="age_cal" value="gt7" required>
+						Mayores de 7 años
+					</label>
+				</li>
+				<li>
+					<label>
+						<input type="radio" name="age_cal" value="gt12" required>
+						Mayores de 12 años
+					</label>
+				</li>
+				<li>
+					<label>
+						<input type="radio" name="age_cal" value="gt18" required>
+						Mayores de 18 años 
+					</label>
+				</li>
+			</ul>
+		</div>
+
+		<div>
+			<h4>Puntuación</h4>
+			<input type="range" id="rating" name="rating" min="0" max="10"
+			step="1">	
+		</div>
+
+		<div>
+			<button type="submit">Crear serie </button>
+		</div>
+	</form>
+</body>
+</html>
