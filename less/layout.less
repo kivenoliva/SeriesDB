@@ -1,0 +1,25 @@
+// Layout container
+.container{
+	margin: auto;
+	width: @desktop-width;
+
+}
+
+
+//Grid
+
+.grid-generator(@columns, @i:1) when (@i <= @columns){
+
+	.col-@{i} {
+		width: @i * (100% / @columns);
+		float: left;
+		display:block;
+	 }
+	.grid-generator(@columns, (@i + 1));
+}
+
+.row {
+	.clearfix();
+	.grid-generator(12);
+	//div[class*="col-"]:nth-child(odd) { background-color:#999999; }
+}

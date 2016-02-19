@@ -1,0 +1,37 @@
+.web.header{
+	background: @pacifica;
+
+	.brand {
+		font-size: 35px;
+		font-family: @font-family-serif;
+	}
+
+	.form.search {
+		    margin-top: 9px;
+	}
+
+	.main.menu{
+		ul{
+			.horizontal-list();
+			text-align: center;
+			margin-left: 4px;
+
+			li{margin-left: -4px}
+
+			a{
+				color:white;
+				display : inline-block;
+				text-decoration: none;
+				background-color: darken(@pacifica, 30%);
+				padding: 10px 20px;
+				transition: background 250ms;
+				&:hover{
+					color:black;
+					background: darken(@pacifica, 20%);
+				}
+			}
+		}
+	}
+
+}
+
