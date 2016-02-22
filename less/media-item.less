@@ -1,18 +1,10 @@
 .media.item{
-	height: 300px;
-	overflow: hidden;
-	text-overflow: ellipsis;
+
 	margin-bottom: 30px;
+
 
 	.cover{
 		overflow: hidden;
-	}
-
-	&:hover{
-		
-		img{
-			transform: scale(1.2);
-		}
 	}
 
 	.link{
@@ -21,7 +13,6 @@
 
 	img{
 		.img-responsive();
-		transition: transform 250ms;
 	}
 
 	.wrapper{
@@ -46,6 +37,19 @@
 	.rating{
 		display: inline;
 		margin-left: 20px;
+	}
+
+
+	.video-wrapper{
+		perspective: 3000px;
+	}
+
+	.video{
+		animation: bounceInDown 2s;
+		width: 100%;
+	    height: 450px;
+    	background: black;
+    	transform:rotateY(-50deg);
 	}
 
 }

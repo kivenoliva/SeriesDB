@@ -1,0 +1,30 @@
+.media.list{
+
+	.media.item{
+	    height: 268px;
+		overflow: hidden;
+		transition: background 250ms;
+		text-overflow: ellipsis;
+	    margin: 10px;
+	    padding: 20px;
+	    border: 1px solid;
+	    border-radius: 20px;
+	    box-shadow: 0 0 10px #CCCCCC;
+
+	    .if-is-mobile({
+	    	height: auto;
+    	});
+
+		&:hover{
+			background: darken(@pacifica, 20%);
+			img{
+				transform: scale(1.2);
+			}
+		}
+
+		img{
+			.img-responsive();
+			transition: transform 250ms;
+		}
+	}
+}

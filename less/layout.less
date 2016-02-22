@@ -3,17 +3,23 @@
 	margin: auto;
 	width: @desktop-width;
 
+	.if-is-mobile({
+		width:100%;
+	})
 }
 
 
 //Grid
-
 .grid-generator(@columns, @i:1) when (@i <= @columns){
 
 	.col-@{i} {
 		width: @i * (100% / @columns);
 		float: left;
 		display:block;
+
+		.if-is-mobile({
+			width:100%;
+		})
 	 }
 	.grid-generator(@columns, (@i + 1));
 }
