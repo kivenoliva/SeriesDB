@@ -1,3 +1,51 @@
 .media.item{
-	img{.img-responsive();}
+	height: 300px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	margin-bottom: 30px;
+
+	.cover{
+		overflow: hidden;
+	}
+
+	&:hover{
+		
+		img{
+			transform: scale(1.2);
+		}
+	}
+
+	.link{
+		color: @main-text-color;
+	}
+
+	img{
+		.img-responsive();
+		transition: transform 250ms;
+	}
+
+	.wrapper{
+		margin: 0 25px 25px 25px; 
+	}
+
+	.title{
+		margin: 0 0 18px 0;
+	}
+
+	.categories ul{
+		.horizontal-list();
+		li:after{
+			content:","
+		}
+
+		li:last-child:after{
+			content:"";
+		}
+	}
+
+	.rating{
+		display: inline;
+		margin-left: 20px;
+	}
+
 }
