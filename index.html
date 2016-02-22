@@ -2,147 +2,229 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 	<title>Series DB</title>
 	<link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body>
 
 	<header class="web header">
-		<div class="brand">Series DB</div>	
+		<div class="container">
+			<div class="row">
+				<div class="col-3">
+					<div class="brand">Series DB</div>	
+				</div>
 
-		<nav>
-			<ul>
-				<li>
-					<a href="#" title="Sistema de recomendación de series y películas">
-					Descubrir</a>
-				</li>
-				<li>
-					<a href="#" title="Catálogo de películas">Películas</a>
-				</li>
-				<li>
-					<a href="#" title="Catálogo de series">Series</a>
-				</li>
-				<li>
-					<a href="#" title="Listado de actores y actrices de series y películas">
-					Actores y actrices</a>
-				</li>
-			</ul>
-		</nav>
+				<div class="col-6">
+					<nav class="main menu">
+						<ul>
+							<li>
+								<a href="#" title="Sistema de recomendación de series y películas">
+								Descubrir</a>
+							</li>
+							<li>
+								<a href="#" title="Catálogo de películas">Películas</a>
+							</li>
+							<li>
+								<a href="#" title="Catálogo de series">Series</a>
+							</li>
+							<li>
+								<a href="#" title="Listado de actores y actrices de series y películas">
+								Actores y actrices</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
 
-		<form class="search form">
-			<input type="search" id="search" name="q" playholder="Buscar...">
-			<button type="search">Buscar</button>
-		</form>
-
+				<div class="col-3">
+					<form class="search form">
+						<input type="search" id="search" name="q" placeholder="Buscar...">
+						<button type="search">Buscar</button>
+					</form>
+				</div>
+			</div>
+		</div>
 	</header>
 
 	<main class="web main">
 
-		<section class="series media list">
+		<div class="container">
+			<section class="series media list">
 
-			<header class="series list header">
-				<h2>Catálogo de series</h2>
-			</header>
-			
-			<article class="series media item">
+				<header class="series list header">
+					<h2>Catálogo de series</h2>
+				</header>
+				
+				<div class="row">
+					<div class="col-6">
+						<article class="series media item">
+							<a href="media-item.html" class="series media link">
 
-				<a href="#" class="series media link">
-					<header class="series media header">
-						<h3 clas="series media title">Supernatural</h3>
-						<img src="https://image.tmdb.org/t/p/w370/3iFm6Kz7iYoFaEcj4fLyZHAmTQA.jpg"
-						alt="Supernatural Wrestle Home" title="Carátula de Supernatural">
-					</header>
+								<div class="row">
+									<div class="col-4">
+										<div class="cover">
+											<img src="https://image.tmdb.org/t/p/w370/3iFm6Kz7iYoFaEcj4fLyZHAmTQA.jpg"
+											alt="Supernatural Wrestle Home" title="Carátula de Supernatural">
+										</div>
+									</div>
 
-					<div class="meta">
-						<div class="categories">
-							<ul>
-								<li>Drama</li>
-								<li>Misterio</li>
-							</ul>
-						</div>
-						<time class="release date" datetime="2005-03-12"></time>
-						<div class="rating"> 7.1</div>
+									<div class="col-8">
+										<div class="media item wrapper">
+											<header class="series media header">
+												<h3 class="series media title">Supernatural</h3>											
+											</header>
+
+											<div class="meta">
+												<div class="categories">
+													<ul>
+														<li>Drama</li>
+														<li>Misterio</li>
+													</ul>
+												</div>
+												<time class="release date" datetime="2005-03-12">2005</time>
+												<div class="rating"> 7.1</div>
+											</div>
+
+											<p class="overview">"Cuando eran niños, Sam y Dean Winchester, perdieron a su madre debido a una misteriosa y demoníaca fuerza supernatural. Posteriormente, su padre los crió para que…"
+											</p>
+										</div>
+									</div>
+
+								</div>
+								
+
+							</a>
+						
+						</article>
 					</div>
 
-					<p class="overview">"Cuando eran niños, Sam y Dean Winchester, perdieron a su madre debido a una misteriosa y demoníaca fuerza supernatural. Posteriormente, su padre los crió para que…"</p>
-				</a>
-				
-			</article>
+					<div class="row">
+						<div class="col-6">
+							<article class="series media item">
 
-			<article class="series media item">
+								<a href="media-item.html" class="series media link">
 
-				<a href="#" class="series media link">
-					<header class="series media header">
-						<h3 clas="series media title">The Walking Dead</h3>
-						<img src="https://image.tmdb.org/t/p/w370/vxuoMW6YBt6UsxvMfRNwRl9LtWS.jpg"
-						alt="Imagen del protagonista con una escopeta" title="Carátula de The Walking Dead">
-					</header>
+									<div class="row">
+										<div class="col-4">
+											<div class="cover">
+												<img src="https://image.tmdb.org/t/p/w370/vxuoMW6YBt6UsxvMfRNwRl9LtWS.jpg"
+												alt="Imagen del protagonista con una escopeta" title="Carátula de The Walking Dead">
+											</div>
+										</div>
 
-					<div class="meta">
-						<div class="categories">
-							<ul>
-								<li>Drama</li>
-								<li>Terror</li>
-							</ul>
+										<div class="col-8">
+											<div class="media item wrapper">
+												<header class="series media header">
+													<h3 class="series media title">The Walking Dead</h3>
+												</header>
+
+												<div class="meta">
+													<div class="categories">
+														<ul>
+															<li>Drama</li>
+															<li>Terror</li>
+														</ul>
+													</div>
+													<time class="release date" datetime="2005-03-12">2005</time>
+													<div class="rating"> 7.5</div>
+												</div>
+
+												<p class="overview">"The Walking Dead" está ambientada en un futuro apocalíptico con la Tierra devastada por el efecto de un cataclismo, que ha provocado la mutación en zombies de la…"
+												</p>
+											</div>
+										</div>
+									</div>
+								</a>
+							
+							</article>
 						</div>
-						<time class="release date" datetime="2005-03-12"></time>
-						<div class="rating"> 7.5</div>
 					</div>
 
-					<p class="overview">"The Walking Dead" está ambientada en un futuro apocalíptico con la Tierra devastada por el efecto de un cataclismo, que ha provocado la mutación en zombies de la…"</p>
-				</a>
-				
-			</article>
+					<div class="col-6">
+						<article class="series media item">
 
-			<article class="series media item">
+							<a href="media-item.html" class="series media link">
 
-				<a href="#" class="series media link">
-					<header class="series media header">
-						<h3 clas="series media title">The Big Bang Theory</h3>
-						<img src="https://image.tmdb.org/t/p/w370/wQoosZYg9FqPrmI4zeCLRdEbqAB.jpg"
-						alt="Imagen de los personajes de The big bang Theory" title="Carátula de The Big Bang Theory">
-					</header>
+								<div class="row">
 
-					<div class="meta">
-						<div class="categories">
-							<ul>
-								<li>Comedia</li>
-							</ul>
-						</div>
-						<time class="release date" datetime="2005-03-12"></time>
-						<div class="rating"> 8</div>
+									<div class="col-4">
+										<div class="cover">
+											<img src="https://image.tmdb.org/t/p/w370/wQoosZYg9FqPrmI4zeCLRdEbqAB.jpg"
+											alt="Imagen de los personajes de The big bang Theory" title="Carátula de The Big Bang Theory">
+										</div>
+									</div>
+
+									<div class="col-8">
+										<div class="media item wrapper">
+											<header class="series media header">
+												<h3 class="series media title">The Big Bang Theory</h3>
+											</header>
+
+											<div class="meta">
+												<div class="categories">
+													<ul>
+														<li>Comedia</li>
+													</ul>
+												</div>
+												<time class="release date" datetime="2005-03-12">2005</time>
+												<div class="rating"> 8</div>
+											</div>
+
+											<p class="overview">"The Big Bang Theory se centra en la vida de cinco personajes que residen en Pasadena, California: los compañeros de piso Leonard Hofstadter y Sheldon Cooper; su…"
+											</p>
+										</div>
+									</div>
+
+								</div>	
+							</a>
+						
+						</article>
 					</div>
 
-					<p class="overview">"The Big Bang Theory se centra en la vida de cinco personajes que residen en Pasadena, California: los compañeros de piso Leonard Hofstadter y Sheldon Cooper; su…"</p>
-				</a>
-				
-			</article>
+					<div class="col-6">
+						<article class="series media item">
 
-			<article class="series media item">
+							<a href="media-item.html" class="series media link">
 
-				<a href="#" class="series media link">
-					<header class="series media header">
-						<h3 clas="series media title">The Simpson</h3>
-						<img src="https://image.tmdb.org/t/p/w370/yTZQkSsxUFJZJe67IenRM0AEklc.jpg"
-						alt="Imagen de los personajes de los Simpson" title="Carátula de los Simpson">
-					</header>
+								<div class="row">
 
-					<div class="meta">
-						<div class="categories">
-							<ul>
-								<li>Comedia</li>
-							</ul>
-						</div>
-						<time class="release date" datetime="2005-03-12"></time>
-						<div class="rating"> 10</div>
+									<div class="col-4">
+										<div class="cover">
+											<img src="https://image.tmdb.org/t/p/w370/yTZQkSsxUFJZJe67IenRM0AEklc.jpg"
+											alt="Imagen de los personajes de los Simpson" title="Carátula de los Simpson">
+										</div>
+									</div>
+
+
+									<div class="col-8">
+										<div class="media item wrapper">
+											<header class="series media header">
+												<h3 class="series media title">The Simpson</h3>
+											</header>
+
+											<div class="meta">
+												<div class="categories">
+													<ul>
+														<li>Comedia</li>
+													</ul>
+												</div>
+												<time class="release date" datetime="2005-03-12">2005</time>
+												<div class="rating"> 10</div>
+											</div>
+
+											<p class="overview">"Los Simpsons es una comedia americana de animación creada por Matt Groening para la compañía Fox. La serie es una parodia satírica del estilo de la clase media americana…"
+											</p>
+										</div>
+									</div>
+								</div>
+							</a>	
+						</article>
 					</div>
+				</div>
+			</section>
+		</div>
 
-					<p class="overview">"Los Simpsons es una comedia americana de animación creada por Matt Groening para la compañía Fox. La serie es una parodia satírica del estilo de la clase media americana…"</p>
-				</a>
-				
-			</article>
-
-		</section>
+		
 
 	</main>
 
