@@ -6,29 +6,29 @@
 </head>
 <body>
 	
-	<div id="container" style="background: gold; padding:20px">
-		<div id="content" style="background: coral; padding:20px">This is the content</div>
-	</div>
-
-	<a href="http://www.google.com/" target="_blank">Ir a Google</a>
+	<button id="changeBackgroundColor">Cambia color de fondo</button>
 
 	<script>
+	
+		var timeoutID = null;
 
-		document.getElementById('container').addEventListener("click", function(event){
-			console.log("CONTAINER CLICKED");
-		});
+		document.getElementById("changeBackgroundColor").addEventListener("click", function(event){
 
-		document.getElementById("content").addEventListener("click", function(event){
-			console.log("content clicked");
-		});
+			if (timeoutID != null){
+				clearTimeout(timeoutID);
+			}
 
-		document.body.addEventListener("click", function(event){
-			console.log("body clicked");
-		}, true);
+			timeoutID = setTimeout(function(){
+				var currentColor = document.body.style.backgroundColor;
 
-		document.getElementsByTagName("a")[0].addEventListener("click", function(event){
-			console.log("Google link");
-			event.preventDefault();
+				if(currentColor == "coral"){
+					document.body.style.backgroundColor = "white";
+				}else{
+					document.body.style.backgroundColor = "coral";
+				}
+				timeoutID = null;
+			}, 2000 );
+
 		});
 
 	</script>
