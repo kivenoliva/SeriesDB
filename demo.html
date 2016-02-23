@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Demo</title>
+</head>
+<body>
+	<div id="demo">Hello World</div>
+	<button id="magicButton">Update time!</button>
+	<button id="addListenerButton">Add listener</button>
+	<button id="removeListenerButton">Remove listener</button>
+
+	<script>
+		function updateDate(){
+			document.getElementById('demo').innerHTML= new Date();
+		}
+
+		function addListener(){
+
+			document.getElementById("magicButton").addEventListener("click", updateDate);
+		}
+		
+		function removeListener(){
+
+			document.getElementById("magicButton").removeEventListener("click", updateDate);
+		}
+
+		document.getElementById("addListenerButton").addEventListener("click", addListener);
+		document.getElementById("removeListenerButton").addEventListener("click", removeListener);
+
+	</script>
+</body>
+</html>
