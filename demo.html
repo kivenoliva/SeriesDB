@@ -6,29 +6,14 @@
 </head>
 <body>
 	<div id="demo">Hello World</div>
-	<button id="magicButton">Update time!</button>
-	<button id="addListenerButton">Add listener</button>
-	<button id="removeListenerButton">Remove listener</button>
+	<button id="saveButton">Save</button>
 
 	<script>
-		//debugger; ---> para parar el flujo de javascript y poder depurar.
-		function updateDate(){
-			console.log("updateDate", arguments); 
-			document.getElementById('demo').innerHTML= new Date();
-		}
+		document.getElementById("demo").contentEditable = true; //permite al usuario a escribir
 
-		document.getElementById("addListenerButton").addEventListener("click", function(){
-
-			console.log("addListenerButton", arguments);
-			document.getElementById("magicButton").addEventListener("click", updateDate);
-
-		});
-
-		document.getElementById("removeListenerButton").addEventListener("click", function(){
-			console.log("removeListenerButton", arguments);
-			document.getElementById("magicButton").removeEventListener("click", updateDate);
-
-		});
+		document.getElementById("saveButton").addEventListener("click", function(evt){
+			console.log("Contenido: ", document.getElementById("demo").innerHTML);
+		})
 
 	</script>
 </body>
