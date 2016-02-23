@@ -11,22 +11,24 @@
 	<button id="removeListenerButton">Remove listener</button>
 
 	<script>
+		//debugger; ---> para parar el flujo de javascript y poder depurar.
 		function updateDate(){
+			console.log("updateDate", arguments); 
 			document.getElementById('demo').innerHTML= new Date();
 		}
 
-		function addListener(){
+		document.getElementById("addListenerButton").addEventListener("click", function(){
 
+			console.log("addListenerButton", arguments);
 			document.getElementById("magicButton").addEventListener("click", updateDate);
-		}
-		
-		function removeListener(){
 
+		});
+
+		document.getElementById("removeListenerButton").addEventListener("click", function(){
+			console.log("removeListenerButton", arguments);
 			document.getElementById("magicButton").removeEventListener("click", updateDate);
-		}
 
-		document.getElementById("addListenerButton").addEventListener("click", addListener);
-		document.getElementById("removeListenerButton").addEventListener("click", removeListener);
+		});
 
 	</script>
 </body>
