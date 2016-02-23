@@ -6,31 +6,62 @@
 </head>
 <body>
 	
-	<button id="changeBackgroundColor">Cambia color de fondo</button>
+	<div id="counter">0</div>
+	<button id="startButton">Start</button>
+	<button id="stopButton">Stop</button>
+	<button id="resetButton">Reset</button>
 
 	<script>
-	
-		var timeoutID = null;
 
-		document.getElementById("changeBackgroundColor").addEventListener("click", function(event){
+		var intervalID = null;
 
-			if (timeoutID != null){
-				clearTimeout(timeoutID);
+		document.getElementById("resetButton").addEventListener("click", function(){
+
+			document.getElementById("startButton").disabled = false;
+			document.getElementById("stopButton").disabled = true;
+			document.getElementById("resetButton").disabled = true;
+
+			document.getElementById("counter").innerHTML = 0;
+		});
+
+		document.getElementById("stopButton").addEventListener("click", function(){
+
+			
+			if(intervalID != null){
+				clearInterval(intervalID);
+				intervalID = null;
 			}
 
-			timeoutID = setTimeout(function(){
-				var currentColor = document.body.style.backgroundColor;
+			document.getElementById("startButton").disabled = false;
+			document.getElementById("stopButton").disabled = true;
+			document.getElementById("resetButton").disabled = false;
 
-				if(currentColor == "coral"){
-					document.body.style.backgroundColor = "white";
-				}else{
-					document.body.style.backgroundColor = "coral";
-				}
-				timeoutID = null;
-			}, 2000 );
+		});
+
+		document.getElementById("startButton").addEventListener("click", function(){
+			
+			if(intervalID != null){
+				return;
+			}
+
+			document.getElementById("startButton").disabled = true;
+			document.getElementById("stopButton").disabled = false;
+			document.getElementById("resetButton").disabled = true;
+
+
+			intervalID = setInterval(function(){
+				var counterValue = document.getElementById("counter").innerHTML;
+				if(isNaN(counterValue))
+					counterValue = 0;
+				counterValue = parseInt(counterValue);
+				counterValue ++;
+				document.getElementById("counter").innerHTML = counterValue;
+
+			}, 50);
 
 		});
 
 	</script>
+
 </body>
 </html>
