@@ -6,59 +6,21 @@
 </head>
 <body>
 	
-	<div id="counter">0</div>
-	<button id="startButton">Start</button>
-	<button id="stopButton">Stop</button>
-	<button id="resetButton">Reset</button>
+	<button id="getDataButton">Get data</button>
+	<div id="content"></div>
 
 	<script>
 
-		var intervalID = null;
-
-		document.getElementById("resetButton").addEventListener("click", function(){
-
-			document.getElementById("startButton").disabled = false;
-			document.getElementById("stopButton").disabled = true;
-			document.getElementById("resetButton").disabled = true;
-
-			document.getElementById("counter").innerHTML = 0;
-		});
-
-		document.getElementById("stopButton").addEventListener("click", function(){
-
-			
-			if(intervalID != null){
-				clearInterval(intervalID);
-				intervalID = null;
+		document.getElementById("getDataButton").addEventListener("click", function(){
+			console.log('Configuro XMLHttpRequest');
+			var xhr = new XMLHttpRequest();    //creamos el objeto
+			xhr.open("GET", "/data.json", true);
+			xhr.onreadystatechange = function(){
+				console.log("onreadystatechange", arguments);
+				document.getElementById("content").innerHTML = this.response;
 			}
-
-			document.getElementById("startButton").disabled = false;
-			document.getElementById("stopButton").disabled = true;
-			document.getElementById("resetButton").disabled = false;
-
-		});
-
-		document.getElementById("startButton").addEventListener("click", function(){
-			
-			if(intervalID != null){
-				return;
-			}
-
-			document.getElementById("startButton").disabled = true;
-			document.getElementById("stopButton").disabled = false;
-			document.getElementById("resetButton").disabled = true;
-
-
-			intervalID = setInterval(function(){
-				var counterValue = document.getElementById("counter").innerHTML;
-				if(isNaN(counterValue))
-					counterValue = 0;
-				counterValue = parseInt(counterValue);
-				counterValue ++;
-				document.getElementById("counter").innerHTML = counterValue;
-
-			}, 50);
-
+			xhr.send();
+			console.log("Envío XMLHttpRequest")
 		});
  
 	</script>
