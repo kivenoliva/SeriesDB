@@ -17,7 +17,7 @@
 			xhr.open("GET", "/data.json", true);
 			xhr.onreadystatechange = function(){
 				console.log("onreadystatechange", arguments);
-				document.getElementById("content").innerHTML = this.response;
+				document.getElementById("content").innerHTML = JSON.parse(this.responseText).title;
 			}
 			xhr.send();
 			console.log("Envío XMLHttpRequest")
