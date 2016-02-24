@@ -29,9 +29,28 @@ $(document).ready(function(){	//Cuando la página se ha cargado por completo
 		}
 
 
+		$ajax({
 
+			url:"/api/series/",
+			data: JSON.stringify({
+				title:title,
+				url:url
+			}),
+			dataType:"json",
+			contentType: "application/json",
+			method:"post",
 
-		return true;	//Permito el envío del formulario
+			succes: function(){
+				alert("Guardado con éxito");
+			},
+
+			error: function(){
+				alert("Se ha producido un error");
+			}
+
+		});
+
+		return false;	//Permito el envío del formulario
 
 	});
 
