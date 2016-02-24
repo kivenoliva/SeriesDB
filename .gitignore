@@ -1,5 +1,8 @@
 # Node modules
 node_modules/
 
+# Bower modules
+bower_components/
+
 # CSS
 style.css
