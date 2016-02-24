@@ -3,19 +3,19 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Nueva serie</title>
+
 </head>
 <body>
 	<h1>Nueva serie</h1>
 	<form novalidate> <!-- HTML5 siempre hay que poner esto, por defecto lo valida el navegador y debemos poner esto a mano-->
 		<div>
-			<input type="text" id = "tittle" name ="tittle"
+			<input class="auto-focus" type="text" id = "title" name ="title"
 			placeholder ="Título de la serie" required>
 		</div>
 
 		<div>
 			<input type="url" id="cover_url" name="cover_url" 
-			placeholder="URL de la imagen de portada" 
-			pattern="^http?://[a-z0-9]+\.[a-z0-9]+/.+" required>	
+			placeholder="URL de la imagen de portada" required>	
 		</div>
 
 		<div>
@@ -73,7 +73,7 @@
 			<ul>
 				<li>
 					<label>
-						<input type="radio" name="age_cal" value="all" required>
+						<input type="radio" name="age_cal" value="all" required checked>
 						Todos los públicos
 					</label>
 				</li>
@@ -108,5 +108,8 @@
 			<button type="submit">Crear serie </button>
 		</div>
 	</form>
+
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="js/src/app.js"></script>
 </body>
 </html>
