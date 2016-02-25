@@ -131,9 +131,6 @@ $(document).ready(function(){
 
 		
 	});
-
-
-
 });
 
 
