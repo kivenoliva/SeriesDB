@@ -29,7 +29,7 @@ $(document).ready(function(){	//Cuando la página se ha cargado por completo
 		}
 
 
-		$ajax({
+		$.ajax({
 
 			url:"/api/series/",
 			data: JSON.stringify({
@@ -38,9 +38,9 @@ $(document).ready(function(){	//Cuando la página se ha cargado por completo
 			}),
 			dataType:"json",
 			contentType: "application/json",
-			method:"post",
+			method:"POST",
 
-			succes: function(){
+			success: function(){
 				alert("Guardado con éxito");
 			},
 
