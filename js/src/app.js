@@ -103,7 +103,7 @@ $(document).ready(function(){
 
 		});
 
-		return false;	//Permito el envío del formulario
+		return false;	//Permito el envío del formulario (con false no permito)
 	});
 
 	
