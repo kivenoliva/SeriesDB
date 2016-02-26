@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Geolocation</title>
+</head>
+<body>
+	<button id="requestButton">Detectar posición</button>
+
+	<div id="data">
+		
+	</div>
+
+	<button id="StopButton">Stop posición</button>
+
+	<div id="map" style="width: 100%; height: 600px;"></div>
+
+	<script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script>
+
+		var operationID = null;	//almacena el ID del watchPosition
+
+		var map = new google.maps.Map(document.getElementById('map'), {
+		    zoom: 18,
+		    center: new google.maps.LatLng(0, 0)
+		});
+
+		//Manejador de eventos para cuando me pulsan el botón de obtener posición
+		$("#requestButton").click(function(){
+
+			//Solicita la posición actual de manera asíncrona
+			operationID = navigator.geolocation.watchPosition(
+
+				function(data){	//Cuando ha ido bien
+					console.log("ID:", operationID)
+					console.log("Geolocalización conseguida", data);
+					var html ="<ul>"
+					html += "<li><strong>Latitud: </strong>" + data.coords.latitude + "</li>";
+					html += "<li><strong>Longitud: </strong>" + data.coords.longitude + "</li>";
+					html += "<li><strong>Precisión: </strong>" + data.coords.accuracy + "</li>";
+					html += "</ul>"
+					$("#data").html(html);
+
+					map.setCenter(new google.maps.LatLng(
+                		data.coords.latitude,
+                		data.coords.longitude
+            		));
+
+				},
+				function(error){	//Cuando ha ido mal
+
+					console.error("Geolocalización fallida", data);
+
+				}, 
+				{	//Opciones de configuración
+
+					enableHighAccuracy: true,
+					maximumAge: 0
+
+				}
+			);
+
+		});
+
+		//Manejador de eventos para cuando me pulsan el boton de dejar posición
+		$("#stopButton").click(function(){
+
+			navigator.geolocation.clearWatch(operationID);
+
+		});
+		
+	</script>
+</body>
+</html>
