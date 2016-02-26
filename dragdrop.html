@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Drag & Drop</title>
+	<style>
+		.drag{
+			width: 100px;
+			height: 100px;
+			background: gold;
+			margin-right: 10px;
+			float:left;
+		}
+
+		#drop{
+			width: 100%;
+			height: 200px;
+			background: pink;
+			position: fixed;
+			bottom:0px;
+			transition: background 250ms;
+		}
+		#drop.ok{background-color: green}
+		#drop.error{background-color: red}
+	</style>
+</head>
+<body>
+	<div class="drag" draggable="true" data-movie-id ="A">A</div>
+	<div class="drag" draggable="true" data-movie-id ="B">B</div>
+	<div class="drag" draggable="true" data-movie-id ="C">C</div>
+	<div class="drag" draggable="true" data-movie-id ="D">D</div>
+	<div class="drag" draggable="true" data-movie-id ="E">E</div>
+	<div class="drag" draggable="true" data-movie-id ="F">F</div>
+	<div class="drag" draggable="true" data-movie-id ="G">G</div>
+	<div class="drag" draggable="true" data-movie-id ="H">H</div>
+	<div class="drag" draggable="true" data-movie-id ="I">I</div>
+	<div class="drag" draggable="true" data-movie-id ="J">J</div>
+	<div class="drag" draggable="true" data-movie-id ="K">K</div>
+	<div id="drop"></div>
+
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script>
+
+		//variable global para movieID
+		var movieID = null;
+
+		$(".drag").on("dragstart", function(evt){
+			console.log("DRAGSTART", evt);
+			//ponemos el id de la película seleccionada
+			movieID = $(this).data("movieId");
+			evt.originalEvent.dataTransfer.setData("movieID", movieID);
+		});
+
+		$(".drag").on("dragend", function(evt){
+			console.log("DRAGEND", evt);
+			movieID = null;
+		});
+
+		$("#drop").on("dragover", function(evt){	//al entrar en la zona del drop
+			evt.preventDefault();	
+			console.log("DRAG ENTER", evt);
+
+			if (movieID === "B"){
+				//jQuery el this se ejecuta en el elemento en el que salta el evento
+				$(this).addClass("error");
+			}else{
+				$(this).addClass("ok");
+			}
+
+		}).on("dragleave", function(evt){	//al abandonar la zona del drop
+			console.log("DRAG LEAVE", evt);
+			$(this).removeClass("ok error");	
+
+		}).on("drop", function(evt){	//al soltar lo que hemos arrastrado
+			evt.preventDefault();
+			console.log("DROP", evt);
+			$(this).removeClass("ok error");
+
+			var movieID = evt.originalEvent.dataTransfer.getData("movieID");
+			if(movieID != "B"){
+				var text = $(this).text();
+				text += movieID;
+				$(this).text(text);
+			}
+
+		});
+
+
+
+	</script>
+</body>
+</html>
